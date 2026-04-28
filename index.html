@@ -386,6 +386,91 @@
         </div>
     </section>
 
+    <!-- 6. Halaman Donasi -->
+    <section id="donasi" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-cpmBlue uppercase tracking-wide mb-4">Salurkan Donasi Anda</h2>
+            <p class="text-gray-600 mb-10">Bantu kami mencetak lebih banyak generasi penghafal Al-Qur'an dan memberdayakan kaum dhuafa melalui sedekah jariyah Anda.</p>
+            
+            <div class="bg-gradient-to-r from-cpmBlue to-blue-800 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden">
+                <!-- Decorative Icon -->
+                <i class="fa-solid fa-hand-holding-heart absolute -right-10 -bottom-10 text-9xl text-white/10"></i>
+                
+                <h3 class="text-xl font-semibold mb-6 text-orange-300">Rekening Resmi Yayasan</h3>
+                
+                <div class="bg-white text-gray-800 rounded-xl p-6 mb-8 inline-block shadow-inner mx-auto max-w-sm w-full overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg" alt="Logo Bank BRI" class="h-8 mx-auto mb-4">
+                    <p class="text-xl md:text-2xl font-bold tracking-wide text-cpmBlue mb-2 whitespace-nowrap" id="rek-number">0895-01-000050-56-5</p>
+                    <p class="text-sm font-semibold uppercase text-gray-500">A.N Yayasan Cahaya Purnama Madani</p>
+                    <button onclick="navigator.clipboard.writeText('089501000050565'); alert('Nomor rekening berhasil disalin!');" class="mt-4 text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded text-gray-600 border border-gray-300 transition">
+                        <i class="fa-regular fa-copy"></i> Salin Nomor Rekening
+                    </button>
+                </div>
+
+                <div class="bg-blue-900/50 rounded-lg p-5 border border-blue-400 backdrop-blur-sm relative z-10">
+                    <h4 class="font-bold text-cpmOrange mb-2 flex justify-center items-center gap-2"><i class="fa-solid fa-circle-exclamation"></i> Prosedur Konfirmasi Penting!</h4>
+                    <p class="text-sm text-blue-100 mb-4">Setelah melakukan transfer, donatur <strong>wajib</strong> melakukan konfirmasi guna pendataan dan pengiriman laporan akuntabilitas yayasan.</p>
+                    <a href="https://wa.me/6285223433132?text=Assalamu'alaikum,%20saya%20ingin%20konfirmasi%20donasi%20ke%20Yayasan%20CPM." target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full transition shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Contact Support
+                    </a>
+                    <p class="text-xs text-blue-200 mt-3">Nomor Admin: <span class="font-bold text-white tracking-wide">0852-2343-3132</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Halaman Berita & Galeri -->
+    <section id="berita" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-cpmBlue uppercase tracking-wide">Berita & Galeri</h2>
+                <div class="w-24 h-1 bg-cpmOrange mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1015/600/400" alt="Kegiatan Tahfidz Yayasan CPM Bandung" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-cpmOrange text-white text-xs font-bold px-2 py-1 rounded">Berita</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Perkembangan Hafalan Santri Angkatan I</h3>
+                        <p class="text-sm text-gray-600 mb-4">Alhamdulillah, santri angkatan pertama telah berhasil menyelesaikan hafalan Juz 30 dengan predikat Mumtaz...</p>
+                        <a href="#" class="text-cpmBlue text-sm font-semibold hover:text-cpmOrange">Baca Selengkapnya &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1080/600/400" alt="Dokumentasi Bakti Sosial CPM" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-cpmBlue text-white text-xs font-bold px-2 py-1 rounded">Galeri</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Penyaluran Sembako untuk Yatim Dhuafa</h3>
+                        <p class="text-sm text-gray-600 mb-4">Dokumentasi kegiatan bakti sosial pembagian sembako rutin bulanan di kawasan Kabupaten Bandung.</p>
+                        <a href="#" class="text-cpmBlue text-sm font-semibold hover:text-cpmOrange">Lihat Foto &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/id/1067/600/400" alt="Ujian Sertifikasi Tahfidz CPM Bandung" class="w-full h-56 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 left-4 bg-cpmOrange text-white text-xs font-bold px-2 py-1 rounded">Berita</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Pelaksanaan Ujian Sertifikasi Tahfidz</h3>
+                        <p class="text-sm text-gray-600 mb-4">Mengevaluasi kualitas bacaan tajwid santri sesuai standar "Metode Test" yayasan.</p>
+                        <a href="#" class="text-cpmBlue text-sm font-semibold hover:text-cpmOrange">Baca Selengkapnya &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 8. Halaman Kontak & Footer -->
     <footer id="kontak" class="bg-cpmBlue text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
