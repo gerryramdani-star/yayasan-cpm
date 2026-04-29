@@ -110,7 +110,23 @@
     <!-- 2. Halaman Beranda (Home Page) -->
     <section id="beranda" class="hero-gradient min-h-screen flex items-center pt-32 pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center text-white mb-16 fade-in-up">
+            <!-- Image Slider Section (New) -->
+            <div class="relative w-full max-w-4xl mx-auto h-[250px] md:h-[450px] rounded-2xl overflow-hidden shadow-2xl mb-10 border-4 border-white/20 fade-in-up">
+                <div id="hero-slider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+                    <!-- Gambar Dummy (bisa diganti URL-nya nanti) -->
+                    <img src="https://picsum.photos/id/1004/1200/600" alt="Slider Image 1" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="https://picsum.photos/id/1070/1200/600" alt="Slider Image 2" class="w-full h-full object-cover flex-shrink-0">
+                    <img src="https://picsum.photos/id/1015/1200/600" alt="Slider Image 3" class="w-full h-full object-cover flex-shrink-0">
+                </div>
+                
+                <!-- Indikator Navigasi Slider -->
+                <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                    <button aria-label="Slide 1" class="slider-indicator w-3 h-3 md:w-4 md:h-4 rounded-full bg-white opacity-100 shadow-md transition-opacity"></button>
+                    <button aria-label="Slide 2" class="slider-indicator w-3 h-3 md:w-4 md:h-4 rounded-full bg-white opacity-50 shadow-md transition-opacity"></button>
+                    <button aria-label="Slide 3" class="slider-indicator w-3 h-3 md:w-4 md:h-4 rounded-full bg-white opacity-50 shadow-md transition-opacity"></button>
+                </div>
+            </div>
+            <div class="text-center text-white mb-16 fade-in-up" style="animation-delay: 0.2s;">
                 <h2 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Menerangi Kehidupan, Membangun Generasi Qur'ani.</h2>
                 <p class="text-lg md:text-2xl mb-6 max-w-3xl mx-auto drop-shadow-md font-semibold">Selamat datang di Yayasan Cahaya Purnama Madani (CPM Foundation). Bersama-sama, kita wujudkan generasi yang beriman, bertaqwa, dan berdaya guna bagi sesama.</p>
                 
@@ -594,6 +610,52 @@
                     console.error('Error!', error.message);
                 });
         });
+        // --- SCRIPT HERO SLIDER ---
+        const slider = document.getElementById('hero-slider');
+        const indicators = document.querySelectorAll('.slider-indicator');
+        let currentSlide = 0;
+        const totalSlides = indicators.length;
+        let sliderInterval;
+
+        function updateSlider() {
+            if(!slider) return;
+            // Menggeser posisi berdasarkan index slide
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Perbarui tampilan titik indikator (redup/terang)
+            indicators.forEach((ind, index) => {
+                if(index === currentSlide) {
+                    ind.classList.remove('opacity-50');
+                    ind.classList.add('opacity-100');
+                } else {
+                    ind.classList.add('opacity-50');
+                    ind.classList.remove('opacity-100');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function startSlider() {
+            // Slider berganti secara otomatis setiap 4000ms (4 detik)
+            sliderInterval = setInterval(nextSlide, 4000);
+        }
+
+        if(slider) {
+            // Navigasi manual ketika indikator diklik
+            indicators.forEach((ind, index) => {
+                ind.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateSlider();
+                    clearInterval(sliderInterval); // Hentikan timer auto-slide
+                    startSlider(); // Mulai ulang timer kembali
+                });
+            });
+            startSlider(); // Jalankan fungsi auto-slide saat halaman dimuat
+        }
     </script>
 </body>
 </html>
